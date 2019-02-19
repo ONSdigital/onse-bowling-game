@@ -20,6 +20,14 @@ def test_all_ones(game):
     assert game.score() == 20
 
 
+# def test_spare(game):
+#     game.roll(5)
+#     game.roll(5)  # spare
+#     game.roll(1)
+#
+#     assert game.score() == 12
+
+
 def roll_many(game, count, pins):
     for roll in range(count):
         game.roll(pins)

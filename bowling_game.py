@@ -1,9 +1,14 @@
 class BowlingGame:
     def __init__(self):
-        self.total_score = 0
+        self.rolls = []
 
     def roll(self, pins):
-        self.total_score += pins
+        self.rolls.append(pins)
 
     def score(self):
-        return self.total_score
+        total_score = 0
+
+        for pins in self.rolls:
+            total_score += pins
+
+        return total_score
