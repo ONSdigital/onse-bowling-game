@@ -21,13 +21,17 @@ def test_all_ones(game):
 
 
 def test_spare(game):
-    game.roll(5)
-    game.roll(5)  # spare
+    roll_spare(game)
     game.roll(1)
 
     roll_many(game, count=17, pins=0)
 
     assert game.score() == 12
+
+
+def roll_spare(game):
+    game.roll(5)
+    game.roll(5)
 
 
 def roll_many(game, count, pins):
