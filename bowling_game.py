@@ -13,7 +13,10 @@ class BowlingGame:
         roll_index = 0
 
         for frame in range(TOTAL_FRAMES):
-            total_score += self._frame_score(roll_index)
+            if self._frame_score(roll_index) == 10:
+                total_score += 10 + self.rolls[roll_index + 2]
+            else:
+                total_score += self._frame_score(roll_index)
             roll_index += 2
 
         return total_score

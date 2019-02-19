@@ -25,6 +25,8 @@ def test_spare(game):
     game.roll(5)  # spare
     game.roll(1)
 
+    roll_many(game, count=17, pins=0)
+
     assert game.score() == 12
 
 
