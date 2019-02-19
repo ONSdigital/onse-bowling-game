@@ -4,8 +4,7 @@ from bowling_game import BowlingGame
 def test_gutter_game():
     game = BowlingGame()
 
-    for roll in range(20):
-        game.roll(0)
+    roll_many(game, count=20, pins=0)
 
     assert game.score() == 0
 
@@ -13,7 +12,11 @@ def test_gutter_game():
 def test_all_ones():
     game = BowlingGame()
 
-    for roll in range(20):
-        game.roll(1)
+    roll_many(game, count=20, pins=1)
 
     assert game.score() == 20
+
+
+def roll_many(game, count, pins):
+    for roll in range(count):
+        game.roll(pins)
