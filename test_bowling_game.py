@@ -29,6 +29,16 @@ def test_spare(game):
     assert game.score() == 12
 
 
+def test_strike(game):
+    game.roll(10)  # Strike
+    game.roll(1)
+    game.roll(2)
+
+    roll_many(game, count=17, pins=0)
+
+    assert game.score() == 16
+
+
 def roll_spare(game):
     game.roll(5)
     game.roll(5)
