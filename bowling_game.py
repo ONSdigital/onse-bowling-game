@@ -14,11 +14,15 @@ class BowlingGame:
         roll_index = 0
 
         for frame in range(TOTAL_FRAMES):
-            if self._is_spare(roll_index):
+            if self.rolls[roll_index] == ALL_PINS:
+                total_score += ALL_PINS + self.rolls[roll_index + 1] + self.rolls[roll_index + 2]
+                roll_index += 1
+            elif self._is_spare(roll_index):
                 total_score += 10 + self._spare_bonus(roll_index)
+                roll_index += 2
             else:
                 total_score += self._frame_score(roll_index)
-            roll_index += 2
+                roll_index += 2
 
         return total_score
 
