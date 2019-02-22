@@ -1,6 +1,8 @@
 # TDD Demo - Bowling Game Kata
 
-This repository contains a base project to run the bowling game kata from.
+This repository forms part of the ONS Software Development Practices
+engineering training sessions. It contains a base project to run the bowling
+game kata from.
 
 ## Branches
 
